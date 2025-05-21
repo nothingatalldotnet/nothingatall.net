@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="canonical" href="https://nothingatall.net/" />
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="noarchive" />
+        <meta name="title" content="nothingatall dot net" />
+        <meta name="description" content="manchester/saddleworth based developer with a ridiculous taste in music and cats" />
+        <meta property="og:title" content="nothingatall dot net" />
+        <meta property="og:url" content="https://nothingatall.net/" />
+        <meta property="og:site_name" content="nothingatall" />
+        <meta property="og:description" content="nothingatall dot net // rich jones-smith // manchester and saddleworth based web developer" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@nothingatallnet" />
+        <meta property="twitter:url" content="https://nothingatall.net/" />
+        <meta property="twitter:creator" content="@nothingatallnet" />
+        <meta property="twitter:creator:id" content="18433843" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "dateCreated": "2025-05-21T00:00::00-00:00",
+            "dateModified": "2025-05-21T00:00::00-00:00",
+            "mainEntity": {
+                "@type": "Person",
+                "name": "Rich Jones-Smith",
+                "alternateName": "Rich",
+                "description": "Experienced senior web developer specializing in back-end architecture",
+                "email": "rich@nothingatall.net",
+                "sameAs": [
+                    "http://instagram.com/nothingatallnet/",
+                    "http://www.last.fm/user/lonely_minotaur",
+                    "http://uk.linkedin.com/in/nothingatalldotnet/",
+                    "http://www.discogs.com/user/nothingatalldotnet/collection"
+                ]
+            },
+            "jobTitle": "Senior Web Developer",
+            "description": "Experienced senior web developer specializing in back-end architecture",
+            "knowsAbout": [
+                "PHP",
+                "Security",
+                "WordPress",
+                "Nginx",
+                "Drupal",
+                "Laravel",
+                "AWS",
+                "Linux",
+                "JavaScript",
+                "SCSS",
+                "Accessibility",
+                "Performance Optimization"
+            ],
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+            },
+            "workLocation": {
+                "@type": "Place",
+                "name": "Remote"
+            }
+        }
+        </script>          
+        <title>nothingatall dot net // rich jones-smith</title>
+        <style>
+            :root {
+              --bg-color: #0a0a0a;
+              --text-color: #ddd;
+              --heading-color: #888;
+              --link-color: #ccc;
+              --link-hover-color: #aaa;
+            }
+          
+            [data-theme="light"] {
+              --bg-color: #f4f4f4;
+              --text-color: #111;
+              --heading-color: #444;
+              --link-color: #333;
+              --link-hover-color: #555;
+            }
+          
+            body {
+              background: var(--bg-color);
+              color: var(--text-color);
+              font-family: 'Trebuchet MS', Helvetica, sans-serif;
+              font-size: 12px;
+              transition: background 0.3s ease, color 0.3s ease;
+            }
+          
+            main {
+              display: flex;
+              flex-direction: column;
+            }
+          
+            header {
+              width: 90%;
+              margin: 0 auto;
+              display: flex;
+              justify-content: space-between;
+            }
+
+            header .actions {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                gap: 0.5rem;
+            }
+
+            header .actions button,
+            header .actions a {
+                border: 1px solid var(--heading-color);
+                padding: 0.5rem 1rem;
+                background: none;
+                color: var(--text-color);
+                cursor: pointer;
+                font-size: 12px;
+                z-index: 999;
+            }
+          
+            section {
+              width: 70%;
+              display: flex;
+              flex-direction: row;
+              justify-content: left;
+              margin-left: 5%;
+              opacity: 0;
+              transform: translateY(10px);
+              transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+          
+            section.visible {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          
+            ul {
+              list-style: none;
+              font-family: inherit;
+              width: 60%;
+            }
+          
+            li {
+              padding-bottom: 6px;
+              position: relative;
+            }
+          
+            li.break {
+              padding-bottom: 12px;
+            }
+          
+            a,
+            a:visited {
+              color: var(--link-color);
+              text-decoration: none;
+              position: relative;
+              padding-bottom: 2px;
+              border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+              transition: color 0.3s ease;
+            }
+          
+            a::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              height: 2px;
+              width: 100%;
+              background-color: #ff007f;
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: transform 0.3s ease;
+              z-index: 1;
+            }
+          
+            a:hover::after,
+            a:focus::after,
+            a:active::after {
+              transform: scaleX(1);
+            }
+          
+            a:hover,
+            a:focus,
+            a:active {
+              color: #ff007f;
+              border-bottom-color: transparent;
+            }
+
+            a.button,
+            a.button:visited {
+                color: inherit;
+                text-decoration: none;
+                border: none;
+                padding: 0;
+                position: static;
+                transition: none;
+                background: none;
+            }
+
+            a.button::after {
+                display: none !important;
+            }
+
+            a.button:hover,
+            a.button:focus,
+            a.button:active {
+                color: inherit;
+            }
+
+            h1 {
+              font-size: 18px;
+              color: var(--heading-color);
+              max-width: 800px;
+            }
+          
+            h1, h2, h3, h4 {
+                color: var(--heading-color);
+                animation-name: pulseToPink;
+                animation-duration: 6s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            h2, h3, h4 {
+                max-width: 100px;
+                width: 100%;
+                border-right: solid 1px;
+            }
+          
+            h2 {
+              font-size: 16px;
+            }
+          
+            h3 {
+              font-size: 14px;
+            }
+          
+            h4 {
+              font-size: 12px;
+            }
+
+            .fading-heading {
+                color: var(--heading-color);
+                animation: pulseToPink 6s ease-in-out infinite alternate;
+            }
+
+            @media (max-width: 970px) {
+              h1 {
+                max-width: 450px;
+              }
+            }
+          
+            @media (max-width: 600px) {
+              header {
+                flex-direction: column;
+                align-items: flex-start;
+              }
+          
+              h1 {
+                font-size: 14px;
+                line-height: 1.4;
+                word-break: break-word;
+                max-width: 200px;
+              }
+          
+              #theme-toggle {
+                font-size: 11px;
+                padding: 0.4rem 0.8rem;
+                top: 0.5rem;
+                right: 0.5rem;
+              }
+            }
+          
+            @media (prefers-reduced-motion: reduce) {
+              * {
+                transition: none !important;
+                animation: none !important;
+              }
+            }
+
+            @keyframes pulseToPink {
+                0% {
+                    color: var(--heading-color);
+                }
+                100% {
+                    color: rgba(255, 0, 127, 0.6);
+                }
+            }
+        </style>
+    </head>
+    <body role="document">
+        <main role="main">
+            <header>
+                <h1 class="fading-heading">nothingatall dot net // rich jones-smith // manchester and saddleworth based web developer</h1>
+                <div class="actions">
+                    <button id="theme-toggle">☀️ light mode</button>
+                    <a class="button" href="mailto:rich@nothingatall.net">🤙 contact me</a>
+                </div>
+            </header>
+            <section aria-labelledby="about">
+                <h2 class="fading-heading" id="about">about</h2>
+                <ul>
+                    <li class="break">contact <a href="mailto:rich@nothingatall.net">rich@nothingatall.net</a></li>
+                    <li class="break">family <a href="https://jones-smith.co.uk/" target="_blank" title="jones-smith" rel="noopener noreferrer">jones-smith</a></li>
+                    <li class="break">i'm open to work, send me an email maybe?</li>
+                    <li>ex senior developer at <a href="https://trunkbbi.com/" title="trunkbbi" target="_blank" rel="noopener noreferrer">trunkbbi</a></li>
+                    <li>ex developer at <a href="https://firecask.co.uk/" title="firecask" target="_blank" rel="noopener noreferrer">firecask</a></li>
+                    <li>ex systems developer at <a href="https://corporationpop.co.uk/" title="corporation pop" target="_blank" rel="noopener noreferrer">corporation pop</a></li>
+                    <li>a long time ago i did music related websites at a small place</li>
+                </ul>
+            </section>
+            <section aria-labelledby="recent">
+                <h3 class="fading-heading" id="recent">recent</h3>
+                <ul>
+                    <li><a href="https://wealthrecovery.co.uk/" title="WRS" target="_blank" rel="noopener noreferrer">WRS</a></li>
+                    <li><a href="https://intasure.com/" title="Intasure" target="_blank" rel="noopener noreferrer">Intasure</a></li>
+                    <li><a href="https://tupas.org/" title="TUPAS" target="_blank">TUPAS (work in progress)</a></li>
+                    <li><a href="https://www.rivulets.net/" title="rivulets" target="_blank" rel="noopener noreferrer">rivulets / nathan amundson</a></li>
+                    <li><a href="https://llynycwn.co.uk" title="llyn y cwn" target="_blank" rel="noopener noreferrer">llyn y cwn</a></li>
+                    <li><a href="https://bcn.co.uk" title="bcn" target="_blank" rel="noopener noreferrer">bcn</a></li>
+                    <li><a href="https://conferma.com" title="conferma" target="_blank" rel="noopener noreferrer">conferma</a></li>
+                    <li><a href="https://caterforce.co.uk" title="caterforce" target="_blank" rel="noopener noreferrer">caterforce</a></li>
+                    <li><a href="https://www.wrensterling.com" title="wren sterling" target="_blank" rel="noopener noreferrer">wren sterling</a></li>
+                    <li><a href="https://palletower.com" title="palletower" target="_blank" rel="noopener noreferrer">palletower</a></li>
+                </ul>
+            </section>
+            <section aria-labelledby="old">
+                <h3 class="fading-heading" id="old">old</h3>
+                <ul>
+                    <li><a href="https://vegsoc.org" title="vegsoc" target="_blank" rel="noopener noreferrer">vegetarian society</a></li>
+                    <li><a href="https://www.metrorod.co.uk/" title="metro rod" target="_blank" rel="noopener noreferrer">metro rod</a></li>
+                    <li><a href="https://henshaws.org.uk" title="henshaws" target="_blank" rel="noopener noreferrer">henshaws</a></li>
+                    <li><a href="https://www.thefed.org.uk/" title="the fed" target="_blank" rel="noopener noreferrer">the fed</a></li>
+                    <li><a href="https://www.johnsankey.co.uk/" title="john sankey" target="_blank" rel="noopener noreferrer">john sankey</a></a></li>
+                    <li><a href="https://whattyre.com" title="whattyre" target="_blank" rel="noopener noreferrer">whattyre</a></li>
+                    <li><a href="https://www.beautybay.com/edited" title="edited" target="_blank" rel="noopener noreferrer">beauty bay - edited</a></li>
+                    <li><a href="https://blog.nastygal.com/" title="nastygal blog" target="_blank" rel="noopener noreferrer">nastygal - blog</a></li>
+                    <li><a href="https://anexsys.com" title="anexsys" target="_blank" rel="noopener noreferrer">anexsys</a></li>
+                    <li><a href="https://www.glynedwardspoet.co.uk/" title="glyn edwards" target="_blank" rel="noopener noreferrer">glyn edwards</a></li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="older">
+                <h3 class="fading-heading" id="older">older</h3>
+                <ul>
+                    <li><a href="https://www.readingfestival.com" title="reading festival" target="_blank" rel="noopener noreferrer">reading </a> and <a href="https://www.leedsfestival.com" title="leeds festival" target="_blank">leeds </a> festivals</li>
+                    <li><a href="https://www.downloadfestival.co.uk" title="download" target="_blank" rel="noopener noreferrer">download festival</a></li>
+                    <li><a href="https://www.creamfields.com" title="creamfields" target="_blank" rel="noopener noreferrer">creamfields</a></li>
+                    <li><a href="https://www.spoonfire.co.uk" title="spoonfire" target="_blank" rel="noopener noreferrer">spoonfire</a></li>
+                    <li><a href="https://www.ncuk.ac.uk/" title="ncuk" target="_blank" rel="noopener noreferrer">ncuk</a></li>
+                </ul>
+            </section>
+            <section aria-labelledby="ancient">
+                <h3 class="fading-heading" id="ancient">ancient</h3>
+                <ul>
+                    <li><a href="https://web.archive.org/web/20110217000056/http://www.thekingoflimbs.com/" title="tkol" target="_blank" rel="noopener noreferrer">radiohead - the king of limbs</a></li>
+                    <li><a href="https://web.archive.org/web/20140111120645/http://abbeyroadlive.sandbag.uk.com/Store/index.html" title="live here now" target="_blank" rel="noopener noreferrer">abbey road live here now</a></li>
+                    <li><a href="https://web.archive.org/web/20120211040816/http://www.oipolloi.com/" title="oipolloi" target="_blank" rel="noopener noreferrer">oi polloi</a></li>
+                </ul>
+            </section>
+            <section aria-labelledby="skills">
+                <h4 class="fading-heading" id="skills">skills</h4>
+                <ul>
+                    <li>html/scss/php/js/sql</li>
+                    <li>laravel/wordpress/roots/drupal/magento</li>
+                    <li>nuxt/angular/react/headless</li>
+                    <li>docker/nginx/apache/linux/aws/git</li>
+                    <li>networking/security/monitoring</li>
+                    <li class="break">management/ops/advice/planning/consultancy</li>
+                </ul>
+            </section>
+            <section aria-labelledby="social">
+                <h4 class="fading-heading" id="social">social</h4>
+                <ul>
+                    <li><a href="http://instagram.com/nothingatallnet/" title="instagram" target="_blank" rel="noopener noreferrer">instagram</a></li>
+                    <li><a href="http://www.last.fm/user/lonely_minotaur" title="last.fm" target="_blank" rel="noopener noreferrer">last.fm</a></li>
+                    <li><a href="http://uk.linkedin.com/in/nothingatalldotnet/" title="linkedin" target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                    <li><a href="http://www.discogs.com/user/nothingatalldotnet/collection" title="discogs" target="_blank" rel="noopener noreferrer">discogs</a></li>
+                </ul>
+            </section>
+        </main>
+        <script>
+            const toggleBtn = document.getElementById('theme-toggle');
+            const root = document.documentElement;
+        
+            if (localStorage.getItem('theme') === 'light') {
+                root.setAttribute('data-theme', 'light');
+                toggleBtn.textContent = '🌙 dark mode';
+            }
+        
+            toggleBtn.addEventListener('click', () => {
+                const isLight = root.getAttribute('data-theme') === 'light';
+                if (isLight) {
+                    root.removeAttribute('data-theme');
+                    toggleBtn.textContent = '☀️ light mode';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    root.setAttribute('data-theme', 'light');
+                    toggleBtn.textContent = '🌙 dark mode';
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+            document.querySelectorAll('.fading-heading').forEach((el, i) => {
+                el.style.animationDelay = `${i}s`;
+            });
+        </script>
+    </body>
+</html>
