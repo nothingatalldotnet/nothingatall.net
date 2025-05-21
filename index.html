@@ -66,46 +66,47 @@
         <title>nothingatall dot net // rich jones-smith</title>
         <style>
             :root {
-              --bg-color: #0a0a0a;
-              --text-color: #ddd;
-              --heading-color: #888;
-              --link-color: #ccc;
-              --link-hover-color: #aaa;
+                --bg-color: #0a0a0a;
+                --text-color: #ddd;
+                --heading-color: #888;
+                --link-color: #ccc;
+                --link-hover-color: #aaa;
             }
-          
+
             [data-theme="light"] {
-              --bg-color: #f4f4f4;
-              --text-color: #111;
-              --heading-color: #444;
-              --link-color: #333;
-              --link-hover-color: #555;
+                --bg-color: #f4f4f4;
+                --text-color: #111;
+                --heading-color: #444;
+                --link-color: #333;
+                --link-hover-color: #555;
             }
-          
+
             body {
-              background: var(--bg-color);
-              color: var(--text-color);
-              font-family: 'Trebuchet MS', Helvetica, sans-serif;
-              font-size: 12px;
-              transition: background 0.3s ease, color 0.3s ease;
+                background: var(--bg-color);
+                color: var(--text-color);
+                font-family: 'Trebuchet MS', Helvetica, sans-serif;
+                font-size: 12px;
+                transition: background 0.3s ease, color 0.3s ease;
             }
-          
+
             main {
-              display: flex;
-              flex-direction: column;
+                display: flex;
+                flex-direction: column;
             }
-          
+
             header {
-              width: 90%;
-              margin: 0 auto;
-              display: flex;
-              justify-content: space-between;
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 80px;
+                padding-top: 1rem;
             }
 
             header .actions {
                 display: flex;
                 flex-direction: column;
                 position: fixed;
-                top: 1rem;
                 right: 1rem;
                 gap: 0.5rem;
             }
@@ -113,81 +114,113 @@
             header .actions button,
             header .actions a {
                 border: 1px solid var(--heading-color);
-                padding: 0.5rem 1rem;
+                padding: 0.5rem;
                 background: none;
                 color: var(--text-color);
                 cursor: pointer;
                 font-size: 12px;
                 z-index: 999;
+                max-height: 40px;
+                align-content: center;
             }
-          
+
+            @keyframes wobble {
+                0%, 100% {
+                    transform: rotate(0deg);
+                }
+                25% {
+                    transform: rotate(5deg);
+                }
+                50% {
+                    transform: rotate(-5deg);
+                }
+                75% {
+                    transform: rotate(3deg);
+                }
+            }
+
+            .wobble {
+                display: inline-block;
+                animation-name: wobble;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+                animation-delay: 0s;
+            }
+
             section {
                 width: 70%;
                 display: flex;
                 flex-direction: row;
                 justify-content: left;
                 margin-left: 5%;
+                padding-bottom: 20px;
                 opacity: 0;
                 transform: translateY(10px);
                 transition: opacity 0.6s ease-out, transform 0.6s ease-out;
             }
-          
+
             section.visible {
-              opacity: 1;
-              transform: translateY(0);
+                opacity: 1;
+                transform: translateY(0);
             }
-          
+
             ul {
-              list-style: none;
-              font-family: inherit;
-              width: 60%;
-              margin-left: -10px;
+                list-style: none;
+                font-family: inherit;
+                width: 60%;
+                margin-left: -10px;
             }
-          
+
             li {
-              padding-bottom: 6px;
-              position: relative;
+                padding-bottom: 6px;
+                position: relative;
             }
-          
+
             li.break {
-              padding-bottom: 12px;
+                padding-bottom: 12px;
             }
-          
+
+            a {
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: rgba(255, 0, 127, 0.2);
+            }
+
             a,
             a:visited {
-              color: var(--link-color);
-              text-decoration: none;
-              position: relative;
-              padding-bottom: 2px;
-              border-bottom: 1px solid rgba(204, 204, 204, 0.4);
-              transition: color 0.3s ease;
+                color: var(--link-color);
+                text-decoration: none;
+                position: relative;
+                padding-bottom: 2px;
+                border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+                transition: color 0.3s ease;
             }
-          
+
             a::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              height: 2px;
-              width: 100%;
-              background-color: #ff007f;
-              transform: scaleX(0);
-              transform-origin: left;
-              transition: transform 0.3s ease;
-              z-index: 1;
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                background-color: #ff007f;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+                z-index: 1;
             }
-          
+
             a:hover::after,
             a:focus::after,
             a:active::after {
-              transform: scaleX(1);
+                transform: scaleX(1);
             }
-          
+
             a:hover,
             a:focus,
             a:active {
-              color: #ff007f;
-              border-bottom-color: transparent;
+                color: #ff007f;
+                border-bottom-color: transparent;
             }
 
             a.button,
@@ -212,11 +245,12 @@
             }
 
             h1 {
-              font-size: 18px;
-              color: var(--heading-color);
-              max-width: 800px;
+                font-size: 18px;
+                color: var(--heading-color);
+                max-width: 800px;
+                margin-top: 0;
             }
-          
+
             h1, h2, h3, h4 {
                 color: var(--heading-color);
                 animation-name: pulseToPink;
@@ -231,17 +265,17 @@
                 width: 100%;
                 border-right: solid 1px;
             }
-          
+
             h2 {
-              font-size: 16px;
+                font-size: 16px;
             }
-          
+
             h3 {
-              font-size: 14px;
+                font-size: 14px;
             }
-          
+
             h4 {
-              font-size: 12px;
+                font-size: 12px;
             }
 
             .fading-heading {
@@ -250,37 +284,37 @@
             }
 
             @media (max-width: 970px) {
-              h1 {
-                max-width: 450px;
-              }
+                h1 {
+                    max-width: 450px;
+                }
             }
-          
+
             @media (max-width: 600px) {
-              header {
-                flex-direction: column;
-                align-items: flex-start;
-              }
-          
-              h1 {
-                font-size: 14px;
-                line-height: 1.4;
-                word-break: break-word;
-                max-width: 200px;
-              }
-          
-              #theme-toggle {
-                font-size: 11px;
-                padding: 0.4rem 0.8rem;
-                top: 0.5rem;
-                right: 0.5rem;
-              }
+                header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                h1 {
+                    font-size: 14px;
+                    line-height: 1.4;
+                    word-break: break-word;
+                    max-width: 200px;
+                }
+
+                #theme-toggle {
+                    font-size: 11px;
+                    padding: 0.4rem 0.8rem;
+                    top: 0.5rem;
+                    right: 0.5rem;
+                }
             }
-          
+
             @media (prefers-reduced-motion: reduce) {
-              * {
-                transition: none !important;
-                animation: none !important;
-              }
+                * {
+                    transition: none !important;
+                    animation: none !important;
+                }
             }
 
             @keyframes pulseToPink {
@@ -298,15 +332,14 @@
             <header>
                 <h1 class="fading-heading">nothingatall dot net // rich jones-smith // manchester and saddleworth based web developer</h1>
                 <div class="actions">
-                    <button id="theme-toggle">☀️ light mode</button>
-                    <a class="button" href="mailto:rich@nothingatall.net">🤙 contact me</a>
+                    <button id="theme-toggle"><span class="wobble">☀️</span> light mode</button>
+                    <a class="button" href="mailto:rich@nothingatall.net"><span class="wobble">🤙</span> contact me</a>
                 </div>
             </header>
             <section aria-labelledby="about">
                 <h2 class="fading-heading" id="about">about</h2>
                 <ul>
                     <li class="break">contact <a href="mailto:rich@nothingatall.net">rich@nothingatall.net</a></li>
-                    <li class="break">family <a href="https://jones-smith.co.uk/" target="_blank" title="jones-smith" rel="noopener noreferrer">jones-smith</a></li>
                     <li class="break">i'm open to work, send me an email maybe?</li>
                     <li>ex senior developer at <a href="https://trunkbbi.com/" title="trunkbbi" target="_blank" rel="noopener noreferrer">trunkbbi</a></li>
                     <li>ex developer at <a href="https://firecask.co.uk/" title="firecask" target="_blank" rel="noopener noreferrer">firecask</a></li>
@@ -314,12 +347,17 @@
                     <li>a long time ago i did music related websites at a small place</li>
                 </ul>
             </section>
-            <section aria-labelledby="recent">
-                <h3 class="fading-heading" id="recent">recent</h3>
+            <section aria-labelledby="latest">
+                <h3 class="fading-heading" id="latest">latest</h3>
                 <ul>
                     <li><a href="https://wealthrecovery.co.uk/" title="WRS" target="_blank" rel="noopener noreferrer">WRS</a></li>
                     <li><a href="https://intasure.com/" title="Intasure" target="_blank" rel="noopener noreferrer">Intasure</a></li>
                     <li><a href="https://tupas.org/" title="TUPAS" target="_blank">TUPAS (work in progress)</a></li>
+                </ul>
+            </section>
+            <section aria-labelledby="recent">
+                <h3 class="fading-heading" id="recent">recent</h3>
+                <ul>
                     <li><a href="https://www.rivulets.net/" title="rivulets" target="_blank" rel="noopener noreferrer">rivulets / nathan amundson</a></li>
                     <li><a href="https://llynycwn.co.uk" title="llyn y cwn" target="_blank" rel="noopener noreferrer">llyn y cwn</a></li>
                     <li><a href="https://bcn.co.uk" title="bcn" target="_blank" rel="noopener noreferrer">bcn</a></li>
@@ -332,19 +370,18 @@
             <section aria-labelledby="old">
                 <h3 class="fading-heading" id="old">old</h3>
                 <ul>
-                    <li><a href="https://vegsoc.org" title="vegsoc" target="_blank" rel="noopener noreferrer">vegetarian society</a></li>
+                    <li><a href="#" title="vegsoc" target="_blank" rel="noopener noreferrer">vegetarian society</a></li>
                     <li><a href="https://www.metrorod.co.uk/" title="metro rod" target="_blank" rel="noopener noreferrer">metro rod</a></li>
-                    <li><a href="https://henshaws.org.uk" title="henshaws" target="_blank" rel="noopener noreferrer">henshaws</a></li>
+                    <li><a href="#" title="henshaws" target="_blank" rel="noopener noreferrer">henshaws</a></li>
                     <li><a href="https://www.thefed.org.uk/" title="the fed" target="_blank" rel="noopener noreferrer">the fed</a></li>
                     <li><a href="https://www.johnsankey.co.uk/" title="john sankey" target="_blank" rel="noopener noreferrer">john sankey</a></a></li>
                     <li><a href="https://whattyre.com" title="whattyre" target="_blank" rel="noopener noreferrer">whattyre</a></li>
-                    <li><a href="https://www.beautybay.com/edited" title="edited" target="_blank" rel="noopener noreferrer">beauty bay - edited</a></li>
+                    <li><a href="#" title="edited" target="_blank" rel="noopener noreferrer">beauty bay - edited</a></li>
                     <li><a href="https://blog.nastygal.com/" title="nastygal blog" target="_blank" rel="noopener noreferrer">nastygal - blog</a></li>
-                    <li><a href="https://anexsys.com" title="anexsys" target="_blank" rel="noopener noreferrer">anexsys</a></li>
-                    <li><a href="https://www.glynedwardspoet.co.uk/" title="glyn edwards" target="_blank" rel="noopener noreferrer">glyn edwards</a></li>
+                    <li><a href="https://anexsys.com/" title="anexsys" target="_blank" rel="noopener noreferrer">anexsys</a></li>
+                    <li><a href="https://www.glynedwardspoet.co.uk/" title="glyn f edwards" target="_blank" rel="noopener noreferrer">glyn f edwards</a></li>
                 </ul>
             </section>
-
             <section aria-labelledby="older">
                 <h3 class="fading-heading" id="older">older</h3>
                 <ul>
@@ -371,12 +408,13 @@
                     <li>nuxt/angular/react/headless</li>
                     <li>docker/nginx/apache/linux/aws/git</li>
                     <li>networking/security/monitoring</li>
-                    <li class="break">management/ops/advice/planning/consultancy</li>
+                    <li>management/ops/planning/consultancy</li>
                 </ul>
             </section>
             <section aria-labelledby="social">
                 <h4 class="fading-heading" id="social">social</h4>
                 <ul>
+                    <li><a href="https://jones-smith.co.uk/" target="_blank" title="jones-smith" rel="noopener noreferrer">jones-smith</a></li>
                     <li><a href="http://instagram.com/nothingatallnet/" title="instagram" target="_blank" rel="noopener noreferrer">instagram</a></li>
                     <li><a href="http://www.last.fm/user/lonely_minotaur" title="last.fm" target="_blank" rel="noopener noreferrer">last.fm</a></li>
                     <li><a href="https://github.com/nothingatalldotnet/nothingatall.net" title="github" target="_blank" rel="noopener noreferrer">github</a></li>
@@ -398,11 +436,11 @@
                 const isLight = root.getAttribute('data-theme') === 'light';
                 if (isLight) {
                     root.removeAttribute('data-theme');
-                    toggleBtn.textContent = '☀️ light mode';
+                    toggleBtn.innerHTML = "<span class='wobble'>☀️</span> light mode";
                     localStorage.setItem('theme', 'dark');
                 } else {
                     root.setAttribute('data-theme', 'light');
-                    toggleBtn.textContent = '🌙 dark mode';
+                    toggleBtn.innerHTML = '<span class="wobble">🌙</span> dark mode';
                     localStorage.setItem('theme', 'light');
                 }
             });
@@ -419,6 +457,16 @@
             document.querySelectorAll('.fading-heading').forEach((el, i) => {
                 el.style.animationDelay = `${i}s`;
             });
+
+            const wobble = toggleBtn.querySelector('.wobble');
+            if (wobble) {
+                wobble.style.display = 'inline-block';
+                wobble.style.animationName = 'wobble';
+                wobble.style.animationTimingFunction = 'ease-in-out';
+                wobble.style.animationIterationCount = 'infinite';
+                wobble.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+                wobble.style.animationDelay = (Math.random() * 2) + 's';
+            }
         </script>
     </body>
 </html>
