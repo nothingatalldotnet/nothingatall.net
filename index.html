@@ -34,7 +34,9 @@
                     "http://instagram.com/nothingatallnet/",
                     "http://www.last.fm/user/lonely_minotaur",
                     "http://uk.linkedin.com/in/nothingatalldotnet/",
-                    "http://www.discogs.com/user/nothingatalldotnet/collection"
+                    "http://www.discogs.com/user/nothingatalldotnet/collection",
+                    "https://bandcamp.com/nothingatall",
+                    "https://github.com/nothingatalldotnet"
                 ]
             },
             "jobTitle": "Senior Web Developer",
@@ -102,6 +104,7 @@
                 width: 90%;
                 margin: 0 auto;
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
                 padding-bottom: 80px;
                 padding-top: 1rem;
@@ -340,6 +343,7 @@
         <main role="main">
             <header>
                 <h1 class="fading-heading">nothingatall dot net // rich jones-smith // manchester and saddleworth based web developer</h1>
+                <p class="now-playing"></p>
                 <div class="actions">
                     <button id="theme-toggle" aria-label="Toggle light and dark mode"><span class="wobble">☀️</span> light mode</button>
                     <a class="button" href="mailto:rich@nothingatall.net"><span class="wobble">🤙</span> contact me</a>
@@ -427,9 +431,10 @@
                     <li><a href="https://jones-smith.co.uk/" target="_blank" title="jones-smith" rel="noopener noreferrer">jones-smith</a></li>
                     <li><a href="http://instagram.com/nothingatallnet/" title="instagram" target="_blank" rel="noopener noreferrer">instagram</a></li>
                     <li><a href="http://www.last.fm/user/lonely_minotaur" title="last.fm" target="_blank" rel="noopener noreferrer">last.fm</a></li>
-                    <li><a href="https://github.com/nothingatalldotnet/nothingatall.net" title="github" target="_blank" rel="noopener noreferrer">github</a></li>
+                    <li><a href="https://github.com/nothingatalldotnet" title="github" target="_blank" rel="noopener noreferrer">github</a></li>
                     <li><a href="http://uk.linkedin.com/in/nothingatalldotnet/" title="linkedin" target="_blank" rel="noopener noreferrer">linkedin</a></li>
                     <li><a href="http://www.discogs.com/user/nothingatalldotnet/collection" title="discogs" target="_blank" rel="noopener noreferrer">discogs</a></li>
+                    <li><a href="https://bandcamp.com/nothingatall" title="bandcamp" target="_blank" rel="noopener noreferrer">bandcamp</a></li>
                 </ul>
             </section>
         </main>
@@ -477,6 +482,28 @@
                 wobble.style.animationDuration = (1.5 + Math.random() * 2) + 's';
                 wobble.style.animationDelay = (Math.random() * 2) + 's';
             }
+
+            const API_KEY = '4d2ba815ff551a9b8e0509cebab188d4';
+            const USERNAME = 'lonely_minotaur';
+            async function fetchNowPlaying() {
+                const endpoint = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`;
+                try {
+                    const res = await fetch(endpoint);
+                    const data = await res.json();
+                    const track = data.recenttracks.track[0];
+                    const isNowPlaying = track['@attr']?.nowplaying === 'true';
+                    const title = track.name;
+                    const artist = track.artist['#text'];
+
+                    const display = `Now Playing <strong>${title}</strong> by <em>${artist}</em> ${isNowPlaying ? '' : ''}`;
+                    document.querySelector('.now-playing').innerHTML = display;
+                } catch {
+
+                }
+            }
+            // fetchNowPlaying();
+            // setInterval(fetchNowPlaying, 30000);
+
         </script>
     </body>
 </html>
