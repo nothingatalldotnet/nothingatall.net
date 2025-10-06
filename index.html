@@ -13,10 +13,7 @@
         <meta property="og:site_name" content="nothingatall" />
         <meta property="og:description" content="nothingatall dot net // rich jones-smith // manchester and saddleworth based web developer" />
         <meta property="twitter:card" content="summary" />
-        <meta property="twitter:site" content="@nothingatallnet" />
         <meta property="twitter:url" content="https://nothingatall.net/" />
-        <meta property="twitter:creator" content="@nothingatallnet" />
-        <meta property="twitter:creator:id" content="18433843" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="application/ld+json">
         {
@@ -36,7 +33,8 @@
                     "http://uk.linkedin.com/in/nothingatalldotnet/",
                     "http://www.discogs.com/user/nothingatalldotnet/collection",
                     "https://bandcamp.com/nothingatall",
-                    "https://github.com/nothingatalldotnet"
+                    "https://github.com/nothingatalldotnet",
+                    "https://modulargrid.net/e/racks/view/2130748"
                 ]
             },
             "jobTitle": "Senior Web Developer",
@@ -354,6 +352,7 @@
                 <ul>
                     <li class="break">contact <a href="mailto:rich@nothingatall.net">rich@nothingatall.net</a></li>
                     <li class="break">i'm open to work, send me an email maybe?</li>
+                    <li>freelancing at the moment</li>
                     <li>recently i was a senior developer at <a href="https://trunkbbi.com/" title="trunkbbi" target="_blank" rel="noopener noreferrer">trunkbbi</a></li>
                     <li>for a while i was a lead developer at <a href="https://firecask.co.uk/" title="firecask" target="_blank" rel="noopener noreferrer">firecask</a></li>
                     <li>i was a systems/web developer at <a href="https://corporationpop.co.uk/" title="corporation pop" target="_blank" rel="noopener noreferrer">corporation pop</a></li>
@@ -364,9 +363,10 @@
             <section aria-labelledby="latest">
                 <h3 class="fading-heading" id="latest">latest</h3>
                 <ul>
+                    <li><a href="https://www.glynedwardspoet.co.uk/" title="glyn f edwards" target="_blank" rel="noopener noreferrer">glyn edwards</a></li>
                     <li><a href="https://wealthrecovery.co.uk/" title="WRS" target="_blank" rel="noopener noreferrer">WRS</a></li>
                     <li><a href="https://intasure.com/" title="Intasure" target="_blank" rel="noopener noreferrer">Intasure</a></li>
-                    <li><a href="https://tupas.org/" title="TUPAS" target="_blank">TUPAS (work in progress)</a></li>
+                    <li><a href="https://tupas.org/" title="TUPAS" target="_blank">TUPAS</a></li>
                 </ul>
             </section>
             <section aria-labelledby="recent">
@@ -378,7 +378,7 @@
                     <li><a href="https://conferma.com" title="conferma" target="_blank" rel="noopener noreferrer">conferma</a></li>
                     <li><a href="https://caterforce.co.uk" title="caterforce" target="_blank" rel="noopener noreferrer">caterforce</a></li>
                     <li><a href="https://www.wrensterling.com" title="wren sterling" target="_blank" rel="noopener noreferrer">wren sterling</a></li>
-                    <li><a href="https://palletower.com" title="palletower" target="_blank" rel="noopener noreferrer">palletower</a></li>
+                    <li><a href="https://palletower.com" title="palletower" target="_blank" rel="noopener noreferrer">palletower (V3 is currently being worked on)</a></li>
                 </ul>
             </section>
             <section aria-labelledby="old">
@@ -393,7 +393,6 @@
                     <li><a href="#" title="edited" target="_blank" rel="noopener noreferrer">beauty bay - edited</a></li>
                     <li><a href="https://blog.nastygal.com/" title="nastygal blog" target="_blank" rel="noopener noreferrer">nastygal - blog</a></li>
                     <li><a href="https://anexsys.com/" title="anexsys" target="_blank" rel="noopener noreferrer">anexsys</a></li>
-                    <li><a href="https://www.glynedwardspoet.co.uk/" title="glyn f edwards" target="_blank" rel="noopener noreferrer">glyn f edwards</a></li>
                 </ul>
             </section>
             <section aria-labelledby="older">
@@ -435,6 +434,7 @@
                     <li><a href="http://uk.linkedin.com/in/nothingatalldotnet/" title="linkedin" target="_blank" rel="noopener noreferrer">linkedin</a></li>
                     <li><a href="http://www.discogs.com/user/nothingatalldotnet/collection" title="discogs" target="_blank" rel="noopener noreferrer">discogs</a></li>
                     <li><a href="https://bandcamp.com/nothingatall" title="bandcamp" target="_blank" rel="noopener noreferrer">bandcamp</a></li>
+                    <li><a href="https://modulargrid.net/e/racks/view/2130748" title="ModularGrid" target="_blank" rel="noopener noreferrer">modulargrid</a></li>
                 </ul>
             </section>
         </main>
@@ -482,27 +482,6 @@
                 wobble.style.animationDuration = (1.5 + Math.random() * 2) + 's';
                 wobble.style.animationDelay = (Math.random() * 2) + 's';
             }
-
-            const API_KEY = '4d2ba815ff551a9b8e0509cebab188d4';
-            const USERNAME = 'lonely_minotaur';
-            async function fetchNowPlaying() {
-                const endpoint = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`;
-                try {
-                    const res = await fetch(endpoint);
-                    const data = await res.json();
-                    const track = data.recenttracks.track[0];
-                    const isNowPlaying = track['@attr']?.nowplaying === 'true';
-                    const title = track.name;
-                    const artist = track.artist['#text'];
-
-                    const display = `Now Playing <strong>${title}</strong> by <em>${artist}</em> ${isNowPlaying ? '' : ''}`;
-                    document.querySelector('.now-playing').innerHTML = display;
-                } catch {
-
-                }
-            }
-            // fetchNowPlaying();
-            // setInterval(fetchNowPlaying, 30000);
 
         </script>
     </body>
